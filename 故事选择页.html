@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>侨批故事选择</title>
+     <style>
+         body, html {
+              margin: 0;
+              padding: 0;
+              width: 100%;
+              height: 100%;
+              background-color: #f0f0f0; /* 浅色背景 */
+          }
+          .cover-container {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              background: url('C:/Users/26015/Desktop/qiaopi/painting/background.png') no-repeat center center;
+              background-size: cover; /* 背景图片自动拉伸以覆盖整个容器 */
+              z-index: 0;
+          }
+         .title {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/title2.png'); /* 替换标题图路径 */
+             background-size: contain;
+             background-repeat: no-repeat;
+             width: 100%;
+             height: 100px;
+             text-align: center;
+             position: absolute;
+             top: 30px;
+             left: 40%;
+             z-index: 1; /* 确保标题在上 */
+         }
+         .banner {
+           background-image: url('C:/Users/26015/Desktop/qiaopi/painting/gery banner.png'); /* 替换横幅图路径 */
+           background-size: cover; /* 调整背景图片以覆盖整个容器 */
+           background-repeat: no-repeat;
+           width: 100%; /* 横幅宽度为100% */
+           height: 80px; 
+           font-size: 18px;
+           position: absolute;
+           top: 30px;
+         }
+         .envelopes {
+             position: relative; /* 使.envelopes成为定位上下文 */
+             display: grid;
+             grid-template-columns: repeat(3, 407px);
+             grid-template-rows: repeat(2, 379px);
+             gap: 20px;
+             justify-content: center;
+             align-content: center;
+             margin: 20px;
+             z-index: 2; /* 信封在背景图之上 */
+        }
+         
+         .envelope {
+             width: 170.5px; /* 原宽度的一半 */
+             height: 169.5px; /* 原高度的一半 */
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/1.png'); /* 替换信封图路径 */
+             background-size: cover;
+             background-position: center;
+             cursor: pointer;
+             transition: transform 0.3s ease;
+             margin: 130px; /* 向下和向右各移动50px */
+         }
+         .envelope:hover {
+             transform: scale(1.1);
+         }
+         /* 为每个信封设置不同的背景图片 */
+         .envelope:nth-child(2) {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/2.png');
+         }
+         .envelope:nth-child(3) {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/3.png');
+         }
+         .envelope:nth-child(4) {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/4.png');
+         }
+         .envelope:nth-child(5) {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/5.png');
+         }
+         .envelope:nth-child(6) {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/6.png');
+         }
+
+         #back-button {
+            background-image: url('C:/Users/26015/Desktop/qiaopi/painting/返回键.png'); /* 替换为您的印章图片路径 */
+            background-size: cover; /* 确保背景图片覆盖整个按钮 */
+            background-position: center; /* 确保背景图片居中显示 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            background-color: transparent; /* 设置背景颜色为透明 */
+            border: none; /* 移除边框 */
+            width: 20px; /* 按钮宽度 */
+            height: 20px; /* 按钮高度 */
+            border-radius: 50%; /* 按钮为圆形 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            z-index: 3; /* 确保按钮在最上层 */
+            position: absolute; /* 绝对定位 */
+            top: 60px; /* 距离顶部的距离 */
+            left: 225px; /* 距离左侧的距离 */
+            transform: scale(3.5); /* 等比例 */
+        }
+     </style>
+</head>
+<body>
+     <div class="cover-container">
+        <div class="title"></div>
+        <button id="back-button" onclick="back()"></button>
+        <div class="banner"></div>
+        <div class="envelopes">
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/1翻山越岭的“老黄牛”.html'"></div>
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/2东兴汇路的开拓先锋.html'"></div>
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/3沈家瑞久违的侨信.html'"></div>
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/4高祖爷爷的侨批人生.html'"></div>
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/5马灿英的辛苦送批路.html'"></div>
+            <div class="envelope" onclick="window.location.href='C:/Users/26015/Desktop/qiaopi/design/6一封心系家国的侨批.html'"></div>
+     </div>
+     </div>  
+     <script>
+       function back() {
+    // 设置要跳转到的页面的URL
+    var url = 'C:/Users/26015/Desktop/qiaopi/design/封面.html'; // 替换为您的目标页面路径
+    // 跳转到指定页面
+    window.location.href = url;
+    }
+      </script>
+ 
+</body>
+</html>

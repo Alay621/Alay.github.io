@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>侨批海龟汤游戏封面</title>
+     <style>
+         body, html {
+             margin: 0;
+             padding: 0;
+             width: 100%;
+             height: 100%;
+             background-color: #f0f0f0; /* 浅色背景 */
+         }
+         .cover-container {
+             position: relative;
+             width: 100%;
+             height: 100%;
+             background: url('C:/Users/26015/Desktop/qiaopi/painting/background.png') no-repeat center center;
+             background-size: cover; /* 背景图片自动拉伸以覆盖整个容器 */
+         }
+         .red-banner {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             width: 80%; /* 根据红色条幅的宽度调整 */
+             height: 700px; /* 根据红色条幅的高度调整 */
+             background: url('C:/Users/26015/Desktop/qiaopi/painting/red banner.png') no-repeat center center;
+             background-size: contain;
+             text-align: center;
+             line-height: 100px; /* 根据红色条幅的高度调整 */
+         }
+         .start-button {
+             position: absolute;
+             bottom: 50px; /* 根据需要调整按钮距离底部的距离 */
+             left: 50%;
+             transform: translateX(-50%);
+             width: 200px; /* 根据按钮的宽度调整 */
+             height: 50px; /* 根据按钮的高度调整 */
+             background: url('C:/Users/26015/Desktop/qiaopi/painting/start.png') no-repeat center center;
+             background-size: contain;
+             text-decoration: none; /* 移除下划线 */
+         }
+         .title {
+             position: absolute;
+             top: 250px; /* 根据需要调整标题距离顶部的距离 */
+             left: 50%;
+             transform: translateX(-50%);
+             width: 450%; /* 根据标题的宽度调整 */
+             height: 300px; /* 根据标题的高度调整 */
+             z-index: 1; /* 确保标题在上 */
+             background: url('C:/Users/26015/Desktop/qiaopi/painting/title1.png') no-repeat center center;
+             background-size: contain;
+             text-align: center;
+         }
+     </style>
+</head>
+<body>
+     <div class="cover-container">
+         <div class="title"></div>
+         <div class="red-banner"></div>
+         <a href="file:///C:\Users\26015\Desktop\qiaopi\design\故事选择页.html" class="start-button"></a>
+     </div>
+</body>
+</html>
