@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>沈家瑞久违的侨信</title>
+     <style>
+         body, html {
+             margin: 0;
+             padding: 0;
+             width: 100%;
+             height: 100%;
+             background-color: #f0f0f0; /* 浅色背景 */
+         }
+         .cover-container {
+        position: relative;
+        width: 100%;
+        height: 130vh; /* 使用视口高度的100% */
+        background: url('C:/Users/26015/Desktop/qiaopi/painting/background.png') no-repeat center center;
+        background-size: cover; /* 背景图片自动拉伸以覆盖整个容器 */
+        z-index: 0; 
+        }
+
+         #back-button {
+            background-image: url('C:/Users/26015/Desktop/qiaopi/painting/返回键.png'); /* 替换为您的印章图片路径 */
+            background-size: cover; /* 确保背景图片覆盖整个按钮 */
+            background-position: center; /* 确保背景图片居中显示 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            background-color: transparent; /* 设置背景颜色为透明 */
+            border: none; /* 移除边框 */
+            width: 20px; /* 按钮宽度 */
+            height: 20px; /* 按钮高度 */
+            border-radius: 50%; /* 按钮为圆形 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            z-index: 3; /* 确保按钮在最上层 */
+            position: absolute; /* 绝对定位 */
+            top: 70px; /* 距离顶部的距离 */
+            left: 425px; /* 距离左侧的距离 */
+            transform: scale(3.5); /* 等比例 */
+        }
+                 /* 设置素材的样式 */
+        .material {
+            position: absolute; /* 绝对定位 */
+            z-index: 10; /* 确保素材位于最上层 */
+        }
+
+        /* 设置第一个ip的样式 */
+        .material-girl {
+            background-image: url('C:/Users/26015/Desktop/qiaopi/painting/女孩.png'); /* 替换为您的素材路径 */
+            background-size: cover; /* 确保背景图片覆盖整个元素 */
+            background-position: center; /* 确保背景图片居中显示 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            width: 100px; /* 根据素材实际尺寸调整 */
+            height: 200px; /* 根据素材实际尺寸调整 */
+            top: 525px; /* 距离顶部的距离 */
+            left: 450px; /* 距离左侧的距离 */
+        }
+
+        /* 设置第二个的样式 */
+        .material-girl2 {
+            background-image: url('C:/Users/26015/Desktop/qiaopi/painting/小女孩.png'); /* 替换为您的素材路径 */
+            background-size: cover; /* 确保背景图片覆盖整个元素 */
+            background-position: center; /* 确保背景图片居中显示 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            width: 100px; /* 根据素材实际尺寸调整 */
+            height: 200px; /* 根据素材实际尺寸调整 */
+            top: 525px; /* 距离顶部的距离 */
+            left: 720px; /* 距离左侧的距离 */
+        }
+         .title {
+            font-size: 0px; /* 字体大小 */
+        }
+        .envelope h1{
+            position: absolute; /* 设置为绝对定位 */
+            left: 660px;
+            top: 290px;
+            font-size: 55px; /* 字体大小 */
+            font-weight: 700; /* 字体粗细 */
+            text-shadow: 2px 2px 0 #fff, /* 白色阴影模拟墨迹边缘 */
+                 -2px -2px 0 #fff, /* 白色阴影模拟墨迹边缘 */
+                 2px -2px 0 #fff, /* 白色阴影模拟墨迹边缘 */
+                 -2px 2px 0 #fff; /* 白色阴影模拟墨迹边缘 */
+            letter-spacing: 2px; /* 文字间距 */
+            word-spacing: 5px; /* 单词间距 */
+            font-weight: bold; /* 字体加粗 */
+            font-style: italic; /* 斜体 */
+        }
+    
+         .envelope {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/letter.png'); /* 替换中间信界面路径 */
+             position: relative;
+             background-repeat: no-repeat; /* 不重复背景图片 */
+             background-color: transparent; /* 设置背景颜色为透明 */
+             width: 120%;
+             height: 2200px;
+             z-index: 0; /* 确保信封在纸张之上 */
+             transform: scale(0.32); /* 等比例缩小 */
+             transform-origin: center; /* 设置缩放的原点为中心 */
+             margin-top: -700px; /* 上下移动 */
+             margin-left: -200px; /* 左右移动 */
+             display: flex; /* 使信封内的内容可以使用flex布局 */
+             flex-direction: column; /* 使信封内的内容垂直排列 */
+             align-items: center; /* 使信封内的内容居中对齐 */
+             justify-content: center; /* 使信封内的内容垂直居中对齐 */
+         }
+
+         .envelope-content {
+             width: 25%; /* 修改宽度*/
+             margin-top: -160px; /* 上下移动 */
+             margin-left: 170px; /* 左右移动 */
+             transform: scale(2.5); /* 等比例缩小 */
+         }
+
+         #story-text {
+            text-shadow: 0.5px 0.5px 0 #999, -0.5px -0.5px 0 #999, 0.5px -0.5px 0 #999, -0.5px 0.5px 0 #999; /* 铅笔书写效果 */
+            font-family: 'Times New Roman', serif; /* 使用衬线字体，更接近手写风格 */
+            font-size: 16px; /* 字体大小 */
+            font-weight: normal; /* 字体粗细 */
+            color: #333; /* 字体颜色 */
+            line-height: 1.4; /* 行间距 */
+        }
+         .paper {
+             background-image: url('C:/Users/26015/Desktop/qiaopi/painting/paper.png'); /* 替换为您的纸张图片路径 */
+             background-repeat: no-repeat; /* 不重复背景图片 */
+             background-color: transparent; /* 设置背景颜色为透明 */
+             width: 300%;
+             height: 900px;
+             position: absolute; /* 设置为绝对定位 */
+             z-index: 1; /* 确保纸张在信封之下 */
+             transform: scale(0.4); /* 等比例 */
+             transform-origin: center; /* 设置缩放的原点为中心 */
+             margin-top: -270px; /* 上下移动 */
+             margin-left: -400px; /* 左右移动 */
+         }
+
+         #hint-text {
+            position: absolute; /* 绝对定位 */
+            margin-left: 400px; /* 左右移动 */
+            margin-top: 100px; /* 上下移动 */
+            transform: translateY(-50%); /* 垂直居中 */
+            width: 400px; /* 宽度 */
+            z-index: 4; /* 确保提示文本在纸张之上 */
+            font-size: 40px; /* 文字大小 */
+            color: #000000; /* 文字颜色 */
+            line-height: 1.2; /* 减小行高 */
+        }
+        
+        #stamp-image {
+            position: absolute; /* 设置为绝对定位 */
+            background-size: cover; /* 确保背景图片覆盖整个元素 */
+            background-position: center; /* 确保背景图片居中显示 */
+            background-repeat: no-repeat; /* 不重复背景图片 */
+            width: 150px; /* 根据素材实际尺寸调整 */
+            height: 200px; /* 根据素材实际尺寸调整 */
+            top: 230px; /* 距离顶部的距离 */
+            left: 600px; /* 距离左侧的距离 */
+            margin-left: 10px;
+            z-index: 1000; /* 确保按钮位于顶层 */
+            transform: scale(1.3); /* 等比例 */
+            opacity: 0; /* 初始时完全透明 */
+            transition: opacity 1s ease-in-out; /* 设置淡出动画效果 */
+        }
+        /* 调整提示按钮位置 */
+        .shifted1 {
+            position: absolute;
+            margin-bottom: -10px; 
+            margin-left: 0px; 
+            z-index: 1000; /* 确保按钮位于顶层 */
+        }
+
+         /* 修改显示答案按钮的样式 */
+        button#show-answer-button {
+            background-color: #8B0000; /* 深红色 */
+            color: white; /* 文字颜色 */
+            border: none; /* 移除边框 */
+            border-radius: 10px; /* 圆角 */
+            padding: 7px 15px; /* 内边距 */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+            transition: background-color 0.3s ease; /* 平滑过渡效果 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            transform: scale(1.2); /* 等比例 */
+            z-index: 1000; /* 确保按钮位于顶层 */
+        }
+
+        /* 修改提示按钮的样式 */
+        button#show-hint-button {
+            background-color: #8B0000; /* 深红色 */
+            color: white; /* 文字颜色 */
+            border: none; /* 移除边框 */
+            border-radius: 10px; /* 圆角 */
+            padding: 7px 15px; /* 内边距 */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+            transition: background-color 0.3s ease; /* 平滑过渡效果 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+            transform: scale(1.2); /* 等比例 */
+            z-index: 1000; /* 确保按钮位于顶层 */
+        }
+
+        /* 修改提交按钮的样式 */
+        button#submit-button {
+        background-color: #8B0000; /* 深红色 */
+        color: white; /* 文字颜色 */
+        border: none; /* 移除边框 */
+        border-radius: 10px; /* 圆角 */
+        padding: 5px 10px; /* 内边距 */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+        transition: background-color 0.3s ease; /* 平滑过渡效果 */
+        cursor: pointer; /* 鼠标悬停时显示指针 */
+        position: absolute; /* 绝对定位 */
+        top: 70px; /* 距离页面底部 */
+        left: 580px; 
+        z-index: 1000; /* 确保按钮位于顶层 */
+        }
+
+        /* 鼠标悬停时改变按钮样式 */
+        button#show-answer-button:hover,
+        button#show-hint-button:hover,
+        button#submit-button:hover {
+        background-color: #660000; /* 悬停时的深红色 */
+        }
+
+        button:hover {
+        background: linear-gradient(to bottom, #a43f38, #f34141); /* 鼠标悬停时的渐变背景 */
+        transform: translateY(-2px); /* 鼠标悬停时向上移动 */
+        }
+
+        button:active {
+        transform: translateY(2px); /* 鼠标点击时向下移动 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* 鼠标点击时的阴影效果 */
+        
+        }
+        /* 输入框样式 */
+        .input-box {
+            border: 2px solid #ccc; /* 边框 */
+            border-radius: 5px; /* 圆角 */
+            padding: 0px; /* 内边距 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* 过渡效果 */
+            font-size: 14px; /* 字体大小 */
+            font-weight: normal; /* 字体粗细 */
+            color: #333; /* 字体颜色 */
+            outline: none; /* 移除焦点轮廓 */
+        }
+
+        /* 鼠标悬停时的输入框样式 */
+        .input-box:hover {
+            border-color: #999; /* 鼠标悬停时的边框颜色 */
+        }
+
+        /* 输入框获得焦点时的样式 */
+        .input-box:focus {
+            border-color: #007bff; /* 获得焦点时的边框颜色 */
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* 获得焦点时的阴影效果 */
+        }
+         /* 调整两个按钮位置 */
+        .shifted {
+            position: relative; 
+            margin-left: 85px; 
+            top: 70px; 
+        }
+
+        .correct { color: green; }
+        .incorrect { color: red; }
+
+        .cover-container h2 {
+        position: absolute; /* 绝对定位 */
+        text-align: center; /* 文本居中 */
+        font-size: 18px; /* 字体大小 */
+        color: #333; /* 字体颜色 */
+        margin-left: 480px; 
+}
+     </style>
+</head>
+<body>
+    <div class="cover-container">
+        <div class="title">信封1</div>
+        <h2>请保持全屏且页面缩放值为100%游玩此游戏</h2>
+        <button id="back-button" onclick="back()"></button>
+        <div class="material material-girl"></div>
+        <div class="material material-girl2"></div>
+        <div class="stamp"></div>
+        <button id="submit-button" class="shifted1"onclick="checkAnswers()">填写完毕，出发送信</button>
+        <div class="envelope">
+            <h1>沈家瑞久违的侨信</h1>
+            <div class="envelope-content">
+                <p id="story-text">
+                    上世纪40年代，日军横扫南洋，华侨寄回家乡的
+                    <input type="text" class="input-box" id="input1" data-answer="侨批" data-hint="是海外华侨通过民间渠道及金融邮政机构寄回国内连带家书或简单附言的汇款凭证" data-synonyms="" placeholder="2" style="width: 3em;">少之又少。抗日战争结束后，被摧残的
+                    <input type="text" class="input-box" id="input2" data-answer="侨批业" data-hint="指从事侨批寄送和管理的行业" data-synonyms="侨汇业,侨信业" placeholder="3" style="width: 4em;">逐步复苏，马来亚邮局1945年9月17日恢复
+                    <input type="text" class="input-box" id="input3" data-answer="营业" data-hint="指商业机构或个人从事的经营活动" data-synonyms="开业,运营" placeholder="2" style="width: 3em;">，宣布即日起到10月18日，所寄批信不用贴邮票不用纳邮资。工作人员匆促
+                    <input type="text" class="input-box" id="input4" data-answer="复岗" data-hint="指员工回归工作岗位，重新开始工作" data-synonyms="复工,返岗" placeholder="2" style="width: 3em;">，克服种种困难将批信送达
+                    <input type="text" class="input-box" id="input5" data-answer="目的地" data-hint="指旅行的终点或预期到达的地方" data-synonyms="终点站,目标地" placeholder="3" style="width: 4em;">。1945年10月17日，战后第一艘南洋船开入
+                    <input type="text" class="input-box" id="input6" data-answer="汕头港" data-hint="位于广东省的一个港口" data-synonyms="" placeholder="3" style="width: 4em;">，带来久违的侨信。港口人员顿时忙碌起来，汕头邮政局也派员前来，接到自珍珠港事件以来首次、最大一批
+                    <input type="text" class="input-box" id="input7" data-answer="邮件" data-hint="指通过邮政系统发送的信件、包裹或其他物品" data-synonyms="信函,邮包,邮品" placeholder="2" style="width: 3em;">。其中包括由马来亚森美兰芙蓉坡58号沈佳瑞的侨信。
+                    细叔父尊鉴：
+                    好久没有信候你，已经过了三年多了，在这长期过着困苦的生活中无时无地不
+                    <input type="text" class="input-box" id="input8" data-answer="怀念" data-hint="指对过去的人、事、物深深地思念或回忆" data-synonyms="思念,想念" placeholder="2" style="width: 3em;">你。现在
+                    <input type="text" class="input-box" id="input9" data-answer="战争" data-hint="指国家或集团之间为争夺利益而进行的武装冲突" data-synonyms="战事,战祸" placeholder="2" style="width: 3em;">幸全面结束，尤其马来亚是我们理想中的和平解决，真可谓幸极矣。昨日闻
+                    <input type="text" class="input-box" id="input10" data-answer="邮局" data-hint="负责邮政服务的机构" data-synonyms="" placeholder="2" style="width: 3em;">即将恢复，我在忙中就草信给弟弟尤三，谅可同时收到。祖母及家母、叔婶等想必健康胜常，家中诸事谅亦顺遂，为祝为慰。数年来饱受着
+                    <input type="text" class="input-box" id="input11" data-answer="困苦" data-hint="指生活中的艰难困苦" data-synonyms="" placeholder="2" style="width: 3em;">，非
+                    <input type="text" class="input-box" id="input12" data-answer="笔墨" data-hint="指书写或绘画时所用工具，也泛指文学或书画作品" data-synonyms="文字" placeholder="2" style="width: 3em;">所能形容也。幸为身体甚好，稍得自慰，余叔不尽款陈，望接信后速赐函达知为盼，专此奉禀。
+                    顺祝康安 顺询二婆、三婶母及诸弟辈均安好。
+                    侄佳瑞谨寄
+                    旧八月十六日                </p>
+                <button id="show-answer-button" class="shifted" onclick="showAnswer()">显示答案</button>
+                <button id="show-hint-button" class="shifted" onclick="showHint()">提示</button>
+                <br>
+                <div class="paper">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p id="hint-text"></p>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       function back() {
+     // 设置要跳转到的页面的URL
+     var url = 'C:/Users/26015/Desktop/qiaopi/design/故事选择页.html'; // 替换为您的目标页面路径
+     // 跳转到指定页面
+     window.location.href = url;
+    }   
+ const inputs = document.querySelectorAll('.input-box');
+        let currentInput = null;
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => currentInput = input);
+            input.addEventListener('input', () => checkAnswer(input));
+        });
+
+        function checkAnswer(input) {
+            const answer = input.getAttribute('data-answer');
+            const synonyms = input.getAttribute('data-synonyms').split(',');
+            const value = input.value;
+
+            if (value === answer) {
+                input.classList.add('correct');
+                input.classList.remove('incorrect');
+            } else if (synonyms.includes(value)) {
+                alert("你成功输入了近义词！");
+                input.value = answer;
+                input.classList.add('correct');
+                input.classList.remove('incorrect');
+            } else {
+                input.classList.add('incorrect');
+                input.classList.remove('correct');
+            }
+        }
+
+        function showAnswer() {
+            if (currentInput) {
+                currentInput.value = currentInput.getAttribute('data-answer');
+                currentInput.classList.add('correct');
+                currentInput.classList.remove('incorrect');
+            } else {
+                alert('请先选择一个输入框。');
+            }
+        }
+
+        function showHint() {
+            if (currentInput) {
+                let hint = currentInput.getAttribute('data-hint');
+                document.getElementById('hint-text').textContent = hint;
+            } else {
+                document.getElementById('hint-text').textContent = '请先选择一个输入框。';
+            }
+        }
+        function checkAnswers() {
+    var inputs = document.querySelectorAll('.input-box');
+    var allCorrect = true;
+
+    // 遍历所有输入框，检查答案是否正确
+    inputs.forEach(function(input) {
+        var answer = input.getAttribute('data-answer');
+        var value = input.value.trim();
+        if (value !== answer) {
+            allCorrect = false;
+        }
+    });
+
+    // 如果所有答案都正确，显示印章素材
+    if (allCorrect) {
+        var stampImage = document.createElement('img');
+        stampImage.id = 'stamp-image';
+        stampImage.src = 'C:/Users/26015/Desktop/qiaopi/painting/印章.png'; // 替换为您的印章图片路径
+        stampImage.style.width = '100px'; // 根据印章素材的实际大小调整宽度
+        stampImage.style.position = 'fixed'; // 确保印章在页面上固定位置
+        stampImage.style.bottom = '110px'; // 根据需要调整印章的位置
+        stampImage.style.left = '580px'; // 根据需要调整印章的位置
+        stampImage.style.zIndex = '1000'; // 确保印章在最顶层
+        stampImage.style.opacity = '0'; // 初始时完全透明
+        stampImage.style.transition = 'opacity 1s ease-in-out'; // 设置淡出动画效果
+        document.body.appendChild(stampImage);
+
+        // 添加动画效果
+        setTimeout(function() {
+            stampImage.style.opacity = '1'; // 显示印章
+        }, 100); // 稍微延迟以确保图片已经加载完成
+    }
+}
+     </script>
+</body>
+</html>
